@@ -57,19 +57,19 @@
         <div class="col-md-6">
           <form method="post" action="add_user.php">
             <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" class="form-control" name="full-name" placeholder="Full Name">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" name="full-name" placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">Prenom</label>
-                <input type="text" class="form-control" name="username" placeholder="Username">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" name="username" placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">Email</label>
+                <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">Adresse</label>
+                <label for="adresse">Adresse</label>
                 <input type="text" class="form-control" name="adresse" placeholder="">
             </div>
             <div class="form-group">
@@ -77,19 +77,19 @@
                 <input type="text" class="form-control" name="ville" placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">Telephone</label>
+                <label for="telephone">Telephone</label>
                 <input type="text" class="form-control" name="telephone" placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">cni</label>
+                <label for="cni">cni</label>
                 <input type="text" class="form-control" name="cni" placeholder="">
             </div>
             <div class="form-group">
-                <label for="password">Mot_de_passe</label>
-                <input type="password" class="form-control" name ="password"  placeholder="Password">
+                <label for="mdp">Mot_de_passe</label>
+                <input type="password" class="form-control" name ="password"  placeholder="">
             </div>
             <div class="form-group">
-                <label for="username">Cnps</label>
+                <label for="cnps">Cnps</label>
                 <input type="text" class="form-control" name="cnps" placeholder="">
             </div>
             <div class="form-group">

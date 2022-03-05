@@ -154,6 +154,15 @@ function tableExists($table){
     $sql .="FROM clients c ";
     $result = find_by_sql($sql);
     return $result;
+}
+
+function find_all_projets(){
+  global $db;
+  $results = array();
+  $sql = "SELECT p.id, p.name, p.cout, p.delai_payement, p.d_debut, p.d_fin ";
+  $sql .="FROM projets p ";
+  $result = find_by_sql($sql);
+  return $result;
 
 }
   /*--------------------------------------------------------------*/

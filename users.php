@@ -37,7 +37,7 @@
             <th>Telephone</th>
             <th>Cni</th>
             <th>Cnps</th>
-            <th style="width: 20%;">Last Login</th>
+            <th style="width: 20%;">Dernière connexion</th>
             <th class="text-center" style="width: 100px;">Actions</th>
           </tr>
         </thead>

@@ -14,6 +14,11 @@
       <i class="glyphicon glyphicon-user"></i>
       <span>Utilisateurs</span>
     </a>
+    <a href="projets.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Projets</span>
+    </a>
+    
    
   </li>
   <li>
