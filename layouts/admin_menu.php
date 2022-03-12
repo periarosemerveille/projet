@@ -18,8 +18,10 @@
       <i class="glyphicon glyphicon-user"></i>
       <span>Projets</span>
     </a>
-    
-   
+    <a href="commande.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Commande</span>
+    </a>
   </li>
   <li>
     <a href="categorie.php" >

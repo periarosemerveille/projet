@@ -165,6 +165,16 @@ function find_all_projets(){
   return $result;
 
 }
+
+function find_all_commande(){
+  global $db;
+  $results = array();
+  $sql = "SELECT m.id, m.nom_projet, m.nom_client, m.motif, m.date ";
+  $sql .="FROM commande m ";
+  $result = find_by_sql($sql);
+  return $result;
+}
+
   /*--------------------------------------------------------------*/
   /* Function to update the last log in of a user
   /*--------------------------------------------------------------*/

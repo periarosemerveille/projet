@@ -9,7 +9,7 @@
       $session->msg("s","Client supprimé.");
       redirect('clients.php');
   } else {
-      $session->msg("d","Clien non supprimé.");
+      $session->msg("d","Client non supprimé.");
       redirect('clients.php');
   }
 ?>
