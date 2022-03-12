@@ -166,6 +166,7 @@ function find_all_projets(){
 
 }
 
+<<<<<<< HEAD
  function find_all_creancier(){
     global $db;
     $results = array();
@@ -174,6 +175,17 @@ function find_all_projets(){
     $result = find_by_sql($sql);
     return $result;
 }
+=======
+function find_all_commande(){
+  global $db;
+  $results = array();
+  $sql = "SELECT m.id, m.nom_projet, m.nom_client, m.motif, m.date ";
+  $sql .="FROM commande m ";
+  $result = find_by_sql($sql);
+  return $result;
+}
+
+>>>>>>> c435f42296a66acc4f02f372cc24d09f415e57eb
   /*--------------------------------------------------------------*/
   /* Function to update the last log in of a user
   /*--------------------------------------------------------------*/
