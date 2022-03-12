@@ -80,7 +80,7 @@
                 <label for="telephone">Telephone</label>
                 <input type="text" class="form-control" name="telephone" placeholder="">
             </div>
-            <div class="form-group">
+            <div class="form-group"> 
                 <label for="cni">cni</label>
                 <input type="text" class="form-control" name="cni" placeholder="">
             </div>
