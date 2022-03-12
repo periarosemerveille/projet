@@ -30,11 +30,11 @@
         $query .=")";
         if($db->query($query)){
           //sucess
-          $session->msg('s',"User account has been creted! ");
+          $session->msg('s',"Employé créé! ");
           redirect('add_user.php', false);
         } else {
           //failed
-          $session->msg('d',' Sorry failed to create account!');
+          $session->msg('d',' Employé non créé!');
           redirect('add_user.php', false);
         }
    } else {
@@ -50,7 +50,7 @@
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Ajouter un utilisateur</span>
+          <span>Ajouter un employé</span>
        </strong>
       </div>
       <div class="panel-body">
@@ -63,6 +63,10 @@
             <div class="form-group">
                 <label for="prenom">Prenom</label>
                 <input type="text" class="form-control" name="username" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="text" class="form-control" name="password" placeholder="">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>

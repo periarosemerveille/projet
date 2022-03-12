@@ -20,9 +20,9 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Utlisateurs</span>
+          <span>Employé</span>
        </strong>
-         <a href="add_user.php" class="btn btn-info pull-right">Ajouter un utilisateur</a>
+         <a href="add_user.php" class="btn btn-info pull-right">Ajouter un employé</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
@@ -56,10 +56,10 @@
            <td><?php echo read_date($a_user['last_login'])?></td>
            <td class="text-center">
              <div class="btn-group">
-                <a href="edit_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
+                <a href="edit_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
                   <i class="glyphicon glyphicon-pencil"></i>
                </a>
-                <a href="delete_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+                <a href="delete_user.php?id=<?php echo (int)$a_user['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
                   <i class="glyphicon glyphicon-remove"></i>
                 </a>
                 </div>

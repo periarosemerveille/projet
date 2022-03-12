@@ -52,7 +52,7 @@
           <form method="post" action="add_projets.php">
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input type="text" class="form-control" name="nom" placeholder="">
+                <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="form-group">
                 <label for="cout">Cout</label>

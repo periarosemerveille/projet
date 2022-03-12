@@ -53,10 +53,10 @@
            <td class="text-center"><?php echo remove_junk(ucwords($a_client['ville']))?></td>
            <td class="text-center">
              <div class="btn-group">
-                <a href="edit_clients.php?id=<?php echo (int)$a_client['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
+                <a href="edit_clients.php?id=<?php echo (int)$a_client['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
                   <i class="glyphicon glyphicon-pencil"></i>
                </a>
-                <a href="delete_clients.php?id=<?php echo (int)$a_client['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+                <a href="delete_clients.php?id=<?php echo (int)$a_client['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
                   <i class="glyphicon glyphicon-remove"></i>
                 </a>
                 </div>

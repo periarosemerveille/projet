@@ -12,7 +12,7 @@
     </a>
     <a href="users.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>Utilisateurs</span>
+      <span>Employés</span>
     </a>
     <a href="projets.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
