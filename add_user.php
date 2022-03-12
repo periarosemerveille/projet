@@ -65,10 +65,6 @@
                 <input type="text" class="form-control" name="username" placeholder="">
             </div>
             <div class="form-group">
-                <label for="password">password</label>
-                <input type="text" class="form-control" name="password" placeholder="">
-            </div>
-            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" name="email" placeholder="">
             </div>
