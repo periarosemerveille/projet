@@ -18,7 +18,10 @@
       <i class="glyphicon glyphicon-user"></i>
       <span>Projets</span>
     </a>
-    
+    <a href="creancier.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>creancier</span>
+    </a>
    
   </li>
   <li>
