@@ -18,18 +18,19 @@
       <i class="glyphicon glyphicon-user"></i>
       <span>Projets</span>
     </a>
-<<<<<<< HEAD
     <a href="creancier.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
       <span>creancier</span>
     </a>
    
-=======
     <a href="commande.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>Commande</span>
+      <span>Commandes</span>
     </a>
->>>>>>> c435f42296a66acc4f02f372cc24d09f415e57eb
+    <a href="rapport.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>rapports</span>
+    </a>
   </li>
   <li>
     <a href="categorie.php" >

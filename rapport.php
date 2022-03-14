@@ -6,7 +6,7 @@
 // Checkin What level user has permission to view this page
  page_require_level(1);
 //pull out all user form database
- $all_commande = find_all_commande();
+ $all_rapport = find_all_rapport();
 ?>
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
@@ -20,39 +20,37 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>commande</span>
+          <span>rapport</span>
        </strong>
-         <a href="add_commande.php" class="btn btn-info pull-right">Ajouter une commande</a>
+         <a href="add_rapport.php" class="btn btn-info pull-right">Ajouter un nouveau rapport</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
-            <th>Nom_projet </th>
-            <th>nom_client</th>
+            <th>date depot </th>
+            <th>montant</th>
+            <th>nom client</th>
             <th>motif</th>
-            <th>prix</th>
-            <th>date</th>
             <th class="text-center" style="width: 100px;">Actions</th>
             <!--<th class="text-center" style="width: 100px;">Actions</th>-->
           </tr>
         </thead>
         <tbody>
-        <?php foreach($all_commande as $a_commande): ?>
+        <?php foreach($all_rapport as $a_rapport): ?>
           <tr>
            <td class="text-center"><?php echo count_id();?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_commande['nom_projet']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_commande['nom_client']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_commande['motif']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_commande['prix']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_commande['date']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['date_depot']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['montant']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['nom_client']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['motif']))?></td>
            <td class="text-center">
              <div class="btn-group">
-                <a href="edit_commande.php?id=<?php echo (int)$a_commande['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
+                <a href="edit_rapport.php?id=<?php echo (int)$a_rapport['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
                   <i class="glyphicon glyphicon-pencil"></i>
                </a>
-                <a href="delete_commande.php?id=<?php echo (int)$a_commande['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
+                <a href="delete_rapport.php?id=<?php echo (int)$a_rapport['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
                   <i class="glyphicon glyphicon-remove"></i>
                 </a>
                 </div>

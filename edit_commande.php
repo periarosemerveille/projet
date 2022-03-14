@@ -15,16 +15,17 @@
 <?php
 //Update commande basic info
   if(isset($_POST['update'])) {
-    $req_fields = array('nom_projet','nom_client','motif', 'date');
+    $req_fields = array('nom_projet','nom_client','motif','prix', 'date');
     validate_fields($req_fields);
     if(empty($errors)){
              $id = (int)$e_commande['id'];
            $nom_projet = remove_junk($db->escape($_POST['nom_projet']));
        $nom_client = remove_junk($db->escape($_POST['nom_client']));
        $motif = remove_junk($db->escape($_POST['motif']));
+       $prix = remove_junk($db->escape($_POST['prix']));
        $date = remove_junk($db->escape($_POST['date']));
     
-            $sql = "UPDATE commande SET nom_projet ='{$nom_projet}', nom_client ='{$nom_client}', motif='{$motif}', date='{$date}'  WHERE id='{$db->escape($id)}'";
+            $sql = "UPDATE commande SET nom_projet ='{$nom_projet}', nom_client ='{$nom_client}', motif='{$motif}', prix='{$prix}', date='{$date}'  WHERE id='{$db->escape($id)}'";
          $result = $db->query($sql);
           if($result && $db->affected_rows() === 1){
             $session->msg('s',"commande modifiée ");
@@ -66,6 +67,10 @@
                   <input type="text" class="form-control" name="motif" value="<?php echo remove_junk(ucwords($e_commande['motif'])); ?>">
             </div>
             <div class="form-group">
+                  <label for="prix" class="control-label">prix</label>
+                  <input type="text" class="form-control" name="prix" value="<?php echo remove_junk(ucwords($e_commande['prix'])); ?>">
+            </div>
+            <div class="form-group">
                   <label for="date" class="control-label">date</label>
                   <input type="date" class="form-control" name="date" value="<?php echo remove_junk(ucwords($e_commande['date'])); ?>">
             </div>
@@ -73,7 +78,7 @@
                     <button type="submit" name="update" class="btn btn-info">Modifier</button>
             </div>
         </form>
-       </div>
+</diV>
      </div>
   </div>
   <!-- Change password form -->

@@ -8,21 +8,22 @@
 <?php
   if(isset($_POST['add_commande'])){
 
-   $req_fields = array('nom_projet','nom_client','motif', 'date' );
+   $req_fields = array('nom_projet','nom_client','motif','prix', 'date' );
    validate_fields($req_fields);
 
    if(empty($errors)){
            $nom_projet   = remove_junk($db->escape($_POST['nom_projet']));
        $nom_client   = remove_junk($db->escape($_POST['nom_client']));
        $motif   = remove_junk($db->escape($_POST['motif']));
+       $prix   = remove_junk($db->escape($_POST['prix']));
        $date   = remove_junk($db->escape($_POST['date']));
        
 //       $telephone= (int)$db->escape($_POST['telephone']);
 
         $query = "INSERT INTO commande (";
-        $query .="nom_projet, nom_client, motif, date";
+        $query .="nom_projet, nom_client, motif,prix, date";
         $query .=") VALUES (";
-        $query .=" '{$nom_projet}', '{$nom_client}', '{$motif}', '{$date}'";
+        $query .=" '{$nom_projet}', '{$nom_client}', '{$motif}','{$prix}', '{$date}'";
         $query .=")";
         if($db->query($query)){
           //sucess
@@ -64,6 +65,10 @@
             <div class="form-group">
                 <label for="motif">motif</label>
                 <input type="text" class="form-control" name="motif" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="prix">prix</label>
+                <input type="text" class="form-control" name="prix" placeholder="">
             </div>
 
             <div class="form-group">
