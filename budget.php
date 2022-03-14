@@ -6,7 +6,7 @@
 // Checkin What level user has permission to view this page
  page_require_level(1);
 //pull out all user form database
- $all_rapport = find_all_rapport();
+ $all_budget = find_all_budget();
 ?>
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
@@ -20,9 +20,9 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>rapport</span>
+          <span>budget</span>
        </strong>
-         <a href="add_rapport.php" class="btn btn-info pull-right">Ajouter un nouveau rapport</a>
+         <a href="add_budget.php" class="btn btn-info pull-right">Ajouter un nouveau budget</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
@@ -38,19 +38,19 @@
           </tr>
         </thead>
         <tbody>
-        <?php foreach($all_rapport as $a_rapport): ?>
+        <?php foreach($all_budget as $a_budget): ?>
           <tr>
            <td class="text-center"><?php echo count_id();?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['date_depot']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['montant']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['nom_client']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_rapport['motif']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_budget['date_depot']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_budget['montant']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_budget['nom_client']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_budget['motif']))?></td>
            <td class="text-center">
              <div class="btn-group">
-                <a href="edit_rapport.php?id=<?php echo (int)$a_rapport['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
+                <a href="edit_budget.php?id=<?php echo (int)$a_budget['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Modifier">
                   <i class="glyphicon glyphicon-pencil"></i>
                </a>
-                <a href="delete_rapport.php?id=<?php echo (int)$a_rapport['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
+                <a href="delete_budget.php?id=<?php echo (int)$a_budget['id'];?>" class="btn btn-xs btn-danger" data-toggle="tooltip" title="Supprimer">
                   <i class="glyphicon glyphicon-remove"></i>
                 </a>
                 </div>

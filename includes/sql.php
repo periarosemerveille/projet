@@ -181,11 +181,11 @@ function find_all_commande(){
   $result = find_by_sql($sql);
   return $result;
 }
-function find_all_rapport(){
+function find_all_budget(){
   global $db;
   $results = array();
   $sql = "SELECT e.id, e.date_depot, e.montant, e.nom_client, e.motif ";
-  $sql .="FROM rapport e ";
+  $sql .="FROM budget e ";
   $result = find_by_sql($sql);
   return $result;
 }

@@ -27,9 +27,9 @@
       <i class="glyphicon glyphicon-user"></i>
       <span>Commandes</span>
     </a>
-    <a href="rapport.php" class="submenu-toggle">
+    <a href="budget.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>rapports</span>
+      <span>budgets</span>
     </a>
   </li>
   <li>

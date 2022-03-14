@@ -4,12 +4,12 @@
    page_require_level(1);
 ?>
 <?php
-  $delete_id = delete_by_id('rapport',(int)$_GET['id']);
+  $delete_id = delete_by_id('budget',(int)$_GET['id']);
   if($delete_id){
       $session->msg("s","Client supprimé.");
-      redirect('rapport.php');
+      redirect('budget.php');
   } else {
       $session->msg("d","Client non supprimé.");
-      redirect('rapport.php');
+      redirect('budget.php');
   }
 ?>
