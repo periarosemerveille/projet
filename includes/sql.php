@@ -159,7 +159,7 @@ function tableExists($table){
 function find_all_projets(){
   global $db;
   $results = array();
-  $sql = "SELECT p.id, p.name, p.cout, p.delai_payement, p.d_debut, p.d_fin ";
+  $sql = "SELECT p.id, p.nom_projet, p.nom_client, p.cout_projet, p.delai_payement, p.budget_previsionnel, p.d_debut, p.d_fin, montant_verse, p.taux_avancement ";
   $sql .="FROM projets p ";
   $result = find_by_sql($sql);
   return $result;

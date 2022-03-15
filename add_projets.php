@@ -7,20 +7,24 @@
 <?php
   if(isset($_POST['add_projets'])){
 
-   $req_fields = array('name','cout','delai_payement','d_debut', 'd_fin' );
+   $req_fields = array('nom_projet','nom_client','cout_projet','delai_payement','budget_previsionnel','d_debut', 'd_fin','montant_verse','taux_avancement' );
    validate_fields($req_fields);
 
    if(empty($errors)){
-           $name   = remove_junk($db->escape($_POST['name']));
-       $cout   = remove_junk($db->escape($_POST['cout']));
+           $nom_projet   = remove_junk($db->escape($_POST['nom_projet']));
+           $nom_client   = remove_junk($db->escape($_POST['nom_client']));
+       $cout_projet   = remove_junk($db->escape($_POST['cout_projet']));
        $delai_payement   = remove_junk($db->escape($_POST['delai_payement']));
+       $budget_previsionnel   = remove_junk($db->escape($_POST['budget_previsionnel']));
        $d_debut   = remove_junk($db->escape($_POST['d_debut']));
        $d_fin   = remove_junk($db->escape($_POST['d_fin']));
+       $montant_verse   = remove_junk($db->escape($_POST['montant_verse']));
+       $taux_avancement   = remove_junk($db->escape($_POST['taux_avancement']));
       
         $query = "INSERT INTO projets (";
-        $query .="name, cout, delai_payement, d_debut, d_fin";
+        $query .="nom_projet, nom_client, cout_projet, delai_payement, budget_previsionnel, d_debut, d_fin, montant_verse, taux_avancement";
         $query .=") VALUES (";
-        $query .=" '{$name}', '{$cout}', '{$delai_payement}', '{$d_debut}', '{$d_fin}' ";
+        $query .=" '{$nom_projet}', '{$nom_client}', '{$cout_projet}', '{$delai_payement}', '{$budget_previsionnel}', '{$d_debut}', '{$d_fin}', '{$montant_verse}', '{$taux_avancement}'";
         $query .=")";
         if($db->query($query)){
           //sucess
@@ -51,19 +55,26 @@
         <div class="col-md-6">
           <form method="post" action="add_projets.php">
             <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="nom_projet">Nom projet</label>
+                <input type="text" class="form-control" name="nom_projet" placeholder="">
             </div>
             <div class="form-group">
-                <label for="cout">Cout</label>
-                <input type="text" class="form-control" name="cout" placeholder="">
+                <label for="nom_client">Nom client</label>
+                <input type="text" class="form-control" name="nom_client" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="cout_projet">Cout projet</label>
+                <input type="text" class="form-control" name="cout_projet" placeholder="">
             </div>
 
             <div class="form-group">
                 <label for="delai_payement">Delai de payement</label>
                 <input type="date" class="form-control" name="delai_payement" placeholder="">
             </div>
-
+            <div class="form-group">
+                <label for="budget_previsionnel">budget previsionnel</label>
+                <input type="text" class="form-control" name="budget_previsionnel" placeholder="">
+            </div>
             <div class="form-group">
                 <label for="d_debut">Date debut</label>
                 <input type="date" class="form-control" name="d_debut" placeholder="">
@@ -72,6 +83,14 @@
             <div class="form-group">
                 <label for="d_fin">Date fin</label>
                 <input type="date" class="form-control" name ="d_fin"  placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="montant_verse">montant versé</label>
+                <input type="text" class="form-control" name ="montant_verse"  placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="taux_avancement">taux d'avancement</label>
+                <input type="text" class="form-control" name="taux_avancement" placeholder="">
             </div>
 
             <div class="form-group clearfix">

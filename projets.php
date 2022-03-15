@@ -29,11 +29,15 @@
         <thead>
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
-            <th>Nom </th>
-            <th>Cout</th>
+            <th>Nom projet </th>
+            <th>Nom client </th>
+            <th>Cout projet</th>
             <th>Delai de payement</th>
+            <th>budget previsionnel</th>
             <th>Date debut</th>
             <th>Date fin</th>
+            <th>montant versé</th>
+            <th>taux d'avancement </th>
             <th class="text-center" style="width: 100px;">Actions</th>
             <!--<th class="text-center" style="width: 100px;">Actions</th>-->
           </tr>
@@ -42,11 +46,15 @@
         <?php foreach($all_projets as $a_projet): ?>
           <tr>
            <td class="text-center"><?php echo count_id();?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['name']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['cout']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['nom_projet']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['nom_client']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['cout_projet']))?></td>
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['delai_payement']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['budget_previsionnel']))?></td>
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['d_debut']))?></td>
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['d_fin']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['montant_verse']))?></td>
+           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['taux_avancement']))?></td>
            <td class="text-center">
              <div class="btn-group">
                 <a href="edit_projets.php?id=<?php echo (int)$a_projet['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
