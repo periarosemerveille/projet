@@ -165,7 +165,14 @@ function find_all_projets(){
   return $result;
 
 }
-
+ function find_all_creancier(){
+    global $db;
+    $results = array();
+    $sql = "SELECT n.id, n.nom, n.montant, n.statut, n.date, n.interet ";
+    $sql .="FROM creancier n ";
+    $result = find_by_sql($sql);
+    return $result;
+}
 function find_all_commande(){
   global $db;
   $results = array();
