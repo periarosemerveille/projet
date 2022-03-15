@@ -21,14 +21,17 @@
 
     <a href="creancier.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>creancier</span>
+      <span>Creancier</span>
     </a>
    
     <a href="commande.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
       <span>Commandes</span>
     </a>
-
+    <a href="budget.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Budgets</span>
+    </a>
   </li>
   <li>
     <a href="categorie.php" >

@@ -176,12 +176,19 @@ function find_all_projets(){
 function find_all_commande(){
   global $db;
   $results = array();
-  $sql = "SELECT m.id, m.nom_projet, m.nom_client, m.motif, m.date ";
+  $sql = "SELECT m.id, m.nom_projet, m.nom_client, m.motif, m.prix, m.date ";
   $sql .="FROM commande m ";
   $result = find_by_sql($sql);
   return $result;
 }
-
+function find_all_budget(){
+  global $db;
+  $results = array();
+  $sql = "SELECT e.id, e.date_depot, e.montant, e.nom_client, e.motif ";
+  $sql .="FROM budget e ";
+  $result = find_by_sql($sql);
+  return $result;
+}
   /*--------------------------------------------------------------*/
   /* Function to update the last log in of a user
   /*--------------------------------------------------------------*/
