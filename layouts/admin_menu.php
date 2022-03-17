@@ -1,39 +1,54 @@
 <ul>
+<!--Dashboard-->
   <li>
     <a href="admin.php">
       <i class="glyphicon glyphicon-home"></i>
       <span>Dashboard</span>
     </a>
   </li>
+<!--clients-->
   <li>
   <a href="clients.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
       <span>Clients</span>
     </a>
-    <a href="users.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
-      <span>Employés</span>
-    </a>
-    <a href="projets.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
-      <span>Projets</span>
-    </a>
-
-    <a href="creancier.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
-      <span>Creancier</span>
-    </a>
-   
-    <a href="commande.php" class="submenu-toggle">
+  </li>
+<!--commande-->
+<li>
+<a href="commande.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
       <span>Commandes</span>
     </a>
-    <a href="budget.php" class="submenu-toggle">
+</li>
+<!--projet-->
+<li>
+<a href="projets.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Projets</span>
+    </a>
+</li>
+<!--budget-->
+<li>
+<a href="budget.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
       <span>Budgets</span>
     </a>
-  </li>
-  <li>
+</li>
+<!--creanciers-->
+<li>
+<a href="creancier.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Creanciers</span>
+    </a>
+</li>
+<!--employes-->
+<li>
+<a href="users.php" class="submenu-toggle">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Employés</span>
+    </a>
+</li>
+<li>
     <a href="categorie.php" >
       <i class="glyphicon glyphicon-indent-left"></i>
       <span>Categories</span>
