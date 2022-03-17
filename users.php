@@ -20,7 +20,7 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Employé</span>
+          <span>Employés</span>
        </strong>
          <a href="add_user.php" class="btn btn-info pull-right">Ajouter un employé</a>
       </div>

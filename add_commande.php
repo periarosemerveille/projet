@@ -21,7 +21,7 @@
 //       $telephone= (int)$db->escape($_POST['telephone']);
 
         $query = "INSERT INTO commande (";
-        $query .="nom_projet, nom_client, motif,prix, date";
+        $query .="nom_projet, nom_client, motif, prix, date";
         $query .=") VALUES (";
         $query .=" '{$nom_projet}', '{$nom_client}', '{$motif}','{$prix}', '{$date}'";
         $query .=")";
