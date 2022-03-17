@@ -29,7 +29,7 @@
         <thead>
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
-            <th>Nom </th>
+            <th>Noms </th>
             <th>Prenom</th>
             <th class="text-center" style="width: 15%;">statut</th>
             <th>Email</th>
