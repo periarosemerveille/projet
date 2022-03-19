@@ -9,6 +9,8 @@ class  Media {
   //Set destination for upload
   public $userPath = SITE_ROOT.DS.'..'.DS.'uploads/users';
   public $productPath = SITE_ROOT.DS.'..'.DS.'uploads/products';
+  public $commandePath = SITE_ROOT.DS.'..'.DS.'uploads/commandes';
+
 
 
   public $errors = array();

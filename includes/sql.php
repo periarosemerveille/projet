@@ -11,6 +11,9 @@ function find_all($table) {
      return find_by_sql("SELECT * FROM ".$db->escape($table));
    }
 }
+
+
+
 /*--------------------------------------------------------------*/
 /* Function for Perform queries
 /*--------------------------------------------------------------*/
@@ -173,14 +176,27 @@ function find_all_projets(){
     $result = find_by_sql($sql);
     return $result;
 }
-function find_all_commande(){
+
+function find_all_historiques(){
   global $db;
   $results = array();
-  $sql = "SELECT m.id, m.nom_projet, m.nom_client, m.motif, m.prix, m.date ";
-  $sql .="FROM commande m ";
+  $sql = "SELECT h.id, h.activites, h.motif, h.montant, h.date ";
+  $sql .="FROM historiques h ";
   $result = find_by_sql($sql);
   return $result;
 }
+
+/*function join_product_table(){
+  global $db;
+  $sql  =" SELECT p.id,p.name,p.quantity,p.buy_price,p.sale_price,p.media_id,p.date,c.name";
+ $sql  .=" AS categorie,m.file_name AS image";
+ $sql  .=" FROM products p";
+ $sql  .=" LEFT JOIN categories c ON c.id = p.categorie_id";
+ $sql  .=" LEFT JOIN media m ON m.id = p.media_id";
+ $sql  .=" ORDER BY p.id ASC";
+ return find_by_sql($sql);*/
+
+
 function find_all_budget(){
   global $db;
   $results = array();
@@ -261,6 +277,14 @@ function find_all_budget(){
     return find_by_sql($sql);
 
    }
+
+   function join_commande_table(){
+    global $db;
+    $sql = "SELECT d.id, d.nom_projet, d.nom_client, d.motif, d.prix, d.date, d.media_id ";
+    $sql .=" FROM commande d ";
+    $sql  .=" LEFT JOIN media m ON m.id = d.media_id";
+    return find_by_sql($sql);
+  }
   /*--------------------------------------------------------------*/
   /* Function for Finding all product name
   /* Request coming from ajax.php for auto suggest
@@ -391,6 +415,10 @@ function  monthlySales($year){
   $sql .= " GROUP BY DATE_FORMAT( s.date,  '%c' ),s.product_id";
   $sql .= " ORDER BY date_format(s.date, '%c' ) ASC";
   return find_by_sql($sql);
+}
+
+function Pourcentage($Nombre, $Total) {
+	return $Nombre * 100 / $Total;
 }
 
 ?>

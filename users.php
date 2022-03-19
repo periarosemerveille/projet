@@ -30,7 +30,7 @@
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
             <th>Noms </th>
-            <th>Prenom</th>
+            <th>Prenoms</th>
             <th class="text-center" style="width: 15%;">statut</th>
             <th>Email</th>
             <th>Adresse</th>

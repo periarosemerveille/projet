@@ -12,11 +12,11 @@ if(empty($errors)){
      $session->login($user_id);
     //Update Sign in time
      updateLastLogIn($user_id);
-     $session->msg("s", "Welcome to Inventory Management System");
+     $session->msg("s", "Bienvenue à GESPRO");
      redirect('admin.php',false);
 
   } else {
-    $session->msg("d", "Sorry Username/Password incorrect.");
+    $session->msg("d", "Désolé nom d'utlisateur/mot de passe incorrect.");
     redirect('index.php',false);
   }
 
