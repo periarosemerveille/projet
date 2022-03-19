@@ -37,7 +37,6 @@
             <th>Date debut</th>
             <th>Date fin</th>
             <th>montant versé</th>
-            <th>taux d'avancement </th>
             <th class="text-center" style="width: 100px;">Actions</th>
             <!--<th class="text-center" style="width: 100px;">Actions</th>-->
           </tr>
@@ -54,7 +53,6 @@
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['d_debut']))?></td>
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['d_fin']))?></td>
            <td class="text-center"><?php echo remove_junk(ucwords($a_projet['montant_verse']))?></td>
-           <td class="text-center"><?php echo remove_junk(ucwords($a_projet['taux_avancement']))?></td>
            <td class="text-center">
              <div class="btn-group">
                 <a href="edit_projets.php?id=<?php echo (int)$a_projet['id']; ?>" class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">

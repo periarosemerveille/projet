@@ -5,9 +5,9 @@
    page_require_level(1);
 ?>
 <?php
- $c_categorie     = count_by_id('categories');
- $c_product       = count_by_id('products');
- $c_sale          = count_by_id('sales');
+ $c_clients   = count_by_id('clients');
+ $c_projets   = count_by_id('projets');
+ $c_commande         = count_by_id('commande');
  $c_user          = count_by_id('users');
  $products_sold   = find_higest_saleing_product('10');
  $recent_products = find_recent_product_added('5');
@@ -29,49 +29,49 @@
         </div>
         <div class="panel-value pull-right">
           <h2 class="margin-top"> <?php  echo $c_user['total']; ?> </h2>
-          <p class="text-muted">Users</p>
+          <p class="text-muted">Employés</p>
         </div>
        </div>
     </div>
 	</a>
 	
-	<a href="categorie.php" style="color:black;">
+<a href="clients.php" style="color:black;">
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-red">
           <i class="glyphicon glyphicon-th-large"></i>
         </div>
         <div class="panel-value pull-right">
-          <h2 class="margin-top"> <?php  echo $c_categorie['total']; ?> </h2>
-          <p class="text-muted">Categories</p>
+          <h2 class="margin-top"> <?php  echo $c_clients['total']; ?> </h2>
+          <p class="text-muted">Clients</p>
         </div>
        </div>
     </div>
 	</a>
 	
-	<a href="product.php" style="color:black;">
+	<a href="projets.php" style="color:black;">
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-blue2">
           <i class="glyphicon glyphicon-shopping-cart"></i>
         </div>
         <div class="panel-value pull-right">
-          <h2 class="margin-top"> <?php  echo $c_product['total']; ?> </h2>
-          <p class="text-muted">Products</p>
+          <h2 class="margin-top"> <?php  echo $c_projets['total']; ?> </h2>
+          <p class="text-muted">Projets</p>
         </div>
        </div>
     </div>
 	</a>
-	
-	<a href="sales.php" style="color:black;">
+
+	<a href="commande.php" style="color:black;">
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-green">
           <i class="glyphicon glyphicon-usd"></i>
         </div>
         <div class="panel-value pull-right">
-          <h2 class="margin-top"> <?php  echo $c_sale['total']; ?></h2>
-          <p class="text-muted">Sales</p>
+          <h2 class="margin-top"> <?php  echo $c_commande['total']; ?></h2>
+          <p class="text-muted">Commandes</p>
         </div>
        </div>
     </div>
@@ -151,7 +151,7 @@
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Recently Added Products</span>
+          <span>Historiques</span>
         </strong>
       </div>
       <div class="panel-body">

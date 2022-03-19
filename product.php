@@ -32,6 +32,7 @@
                 <th class="text-center" style="width: 100px;"> Actions </th>
               </tr>
             </thead>
+            
             <tbody>
               <?php foreach ($products as $product):?>
               <tr>

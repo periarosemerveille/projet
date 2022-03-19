@@ -3,7 +3,7 @@
   <li>
     <a href="admin.php">
       <i class="glyphicon glyphicon-home"></i>
-      <span>Dashboard</span>
+      <span>Accueil</span>
     </a>
   </li>
 <!--clients-->
@@ -16,28 +16,28 @@
 <!--commande-->
 <li>
 <a href="commande.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-shopping-cart"></i>
       <span>Commandes</span>
     </a>
 </li>
 <!--projet-->
 <li>
 <a href="projets.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-list-alt"></i>
       <span>Projets</span>
     </a>
 </li>
 <!--budget-->
 <li>
 <a href="budget.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-usd"></i>
       <span>Budgets</span>
     </a>
 </li>
 <!--creanciers-->
 <li>
 <a href="creancier.php" class="submenu-toggle">
-      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-briefcase"></i>
       <span>Creanciers</span>
     </a>
 </li>
@@ -48,13 +48,26 @@
       <span>Employés</span>
     </a>
 </li>
+<!--medias-->
 <li>
+    <a href="media.php" >
+      <i class="glyphicon glyphicon-picture"></i>
+      <span>Medias</span>
+    </a>
+  </li>
+  <li>
+    <a href="historiques.php" >
+      <i class="glyphicon glyphicon-indent-left"></i>
+      <span>Historiques</span>
+    </a>
+  </li>
+<!--<li>
     <a href="categorie.php" >
       <i class="glyphicon glyphicon-indent-left"></i>
       <span>Categories</span>
     </a>
-  </li>
-  <li>
+  </li>-->
+ <!-- <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Products</span>
@@ -63,14 +76,9 @@
        <li><a href="product.php">Manage Products</a> </li>
        <li><a href="add_product.php">Add Products</a> </li>
    </ul>
-  </li>
-  <li>
-    <a href="media.php" >
-      <i class="glyphicon glyphicon-picture"></i>
-      <span>Media Files</span>
-    </a>
-  </li>
-  <li>
+  </li>-->
+  
+  <!--<li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-credit-card"></i>
        <span>Sales</span>
@@ -90,5 +98,5 @@
         <li><a href="monthly_sales.php">Monthly sales</a></li>
         <li><a href="daily_sales.php">Daily sales</a> </li>
       </ul>
-  </li>
+  </li>-->
 </ul>

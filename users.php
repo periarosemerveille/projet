@@ -29,8 +29,8 @@
         <thead>
           <tr>
             <th class="text-center" style="width: 50px;">#</th>
-            <th>Nom </th>
-            <th>Prenom</th>
+            <th>Noms </th>
+            <th>Prenoms</th>
             <th class="text-center" style="width: 15%;">statut</th>
             <th>Email</th>
             <th>Adresse</th>

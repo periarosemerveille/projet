@@ -1,44 +1,47 @@
 <?php
-  $page_title = 'Add commande';
+  $page_title = 'Add Product';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
- // page_require_level(1);
-  //$groups = find_all('user_groups');
+  page_require_level(2);
+  $all_photo = find_all('media');
 ?>
 <?php
-  if(isset($_POST['add_commande'])){
-
+ if(isset($_POST['add_commande'])){
    $req_fields = array('nom_projet','nom_client','motif','prix', 'date' );
    validate_fields($req_fields);
-
    if(empty($errors)){
-           $nom_projet   = remove_junk($db->escape($_POST['nom_projet']));
-       $nom_client   = remove_junk($db->escape($_POST['nom_client']));
-       $motif   = remove_junk($db->escape($_POST['motif']));
-       $prix   = remove_junk($db->escape($_POST['prix']));
-       $date   = remove_junk($db->escape($_POST['date']));
-       
-//       $telephone= (int)$db->escape($_POST['telephone']);
+     $nom_projet  = remove_junk($db->escape($_POST['nom_projet']));
+     $nom_client   = remove_junk($db->escape($_POST['nom_client']));
+     $motif   = remove_junk($db->escape($_POST['motif']));
+     $prix   = remove_junk($db->escape($_POST['prix']));
+     $date  = remove_junk($db->escape($_POST['date']));
+     if (is_null($_POST['product-photo']) || $_POST['product-photo'] === "") {
+       $media_id = '0';
+     } else {
+       $media_id = remove_junk($db->escape($_POST['product-photo']));
+     }
+     $date    = make_date();
+     $query  = "INSERT INTO commande (";
+     $query .=" nom_projet, nom_client, motif, prix, date, media_id";
+     $query .=") VALUES (";
+     $query .=" '{$nom_projet}', '{$nom_client}', '{$motif}', '{$prix}', '{$date}', '{$media_id}'";
+     $query .=")";
+     //$query .=" ON DUPLICATE KEY UPDATE name='{$nom_projet}'";
+     if($db->query($query)){
+       $session->msg('s',"commande ajouté");
+       redirect('commande.php', false);
+     } else {
+       $session->msg('d',' non ajouté');
+       redirect('commande.php', false);
+     }
 
-        $query = "INSERT INTO commande (";
-        $query .="nom_projet, nom_client, motif, prix, date";
-        $query .=") VALUES (";
-        $query .=" '{$nom_projet}', '{$nom_client}', '{$motif}','{$prix}', '{$date}'";
-        $query .=")";
-        if($db->query($query)){
-          //sucess
-          $session->msg('s',"le commande a été créé! ");
-          redirect('add_commande.php', false);
-        } else {
-          //failed
-          $session->msg('d',' le commande n'/'a pas été créé!');
-          redirect('add_commande.php', false);
-        }
-   } else {
+   } else{
      $session->msg("d", $errors);
-      redirect('add_commande.php',false);
+     redirect('commande.php',false);
    }
+
  }
+
 ?>
 <?php include_once('layouts/header.php'); ?>
   <?php echo display_msg($msg); ?>
@@ -53,6 +56,15 @@
       <div class="panel-body">
         <div class="col-md-6">
           <form method="post" action="add_commande.php">
+          <div class="form-group">
+                    <select class="form-control" name="product-photo">
+                      <option value="">Select commande Photo</option>
+                    <?php  foreach ($all_photo as $photo): ?>
+                      <option value="<?php echo (int)$photo['id'] ?>">
+                       <?php echo $photo['file_name'] ?></option>
+                    <?php endforeach; ?>
+                    </select>
+                  </div>
             <div class="form-group">
                 <label for="nom_projet">Nom_projet</label>
                 <input type="text" class="form-control" name="nom_projet" placeholder="">
@@ -68,13 +80,14 @@
             </div>
             <div class="form-group">
                 <label for="prix">prix</label>
-                <input type="text" class="form-control" name="prix" placeholder="">
+                <input type="number" class="form-control" name="prix" placeholder="">
             </div>
 
             <div class="form-group">
                 <label for="date">date</label>
                 <input type="date" class="form-control" name="date" placeholder="">
             </div>
+           
             
             <div class="form-group clearfix">
               <button type="submit" name="add_commande" class="btn btn-primary">Ajouter une commande</button>
@@ -86,5 +99,4 @@
 
     </div>
   </div>
-
 <?php include_once('layouts/footer.php'); ?>
