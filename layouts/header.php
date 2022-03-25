@@ -1,4 +1,6 @@
-<?php $user = current_user(); ?>
+<?php $user = current_user(); 
+
+?>
 <!DOCTYPE html>
   <html lang="en">
     <head>

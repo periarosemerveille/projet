@@ -249,7 +249,16 @@ function find_all_budget(){
      if (!$session->isUserLoggedIn(true)):
             $session->msg('d','Veuillez vous connecter...');
             redirect('index.php', false);
-     
+      //if Group status Deactive
+     elseif($login_level['group_status'] === '0'):
+           $session->msg('d','Ce niveau utilisateur a été bandé!');
+           redirect('home.php',false);
+      //cheackin log in User level and Require level is Less than or equal to
+     elseif($current_user['user_level'] <= (int)$require_level):
+              return true;
+      else:
+            $session->msg("d", "Désolé! vous n'êtes pas autorisé à afficher la page.");
+            redirect('home.php', false);
         endif;
 
      }

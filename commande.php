@@ -10,13 +10,17 @@
      <div class="col-md-12">
        <?php echo display_msg($msg); ?>
      </div>
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-         <div class="pull-right">
-           <a href="add_commande.php" class="btn btn-primary">Ajouter commande</a>
-         </div>
-        </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <strong>
+          <span class="glyphicon glyphicon-th"></span>
+          <span>Commandes</span>
+       </strong>
+         <a href="add_creancier.php" class="btn btn-info pull-right">Ajouter une nouvelle commande</a>
+      </div>
         <div class="panel-body">
           <table class="table table-bordered">
             <thead>

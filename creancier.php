@@ -20,7 +20,7 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>créances</span>
+          <span>Créances</span>
        </strong>
          <a href="add_creancier.php" class="btn btn-info pull-right">Ajouter une nouvelle créance</a>
       </div>
