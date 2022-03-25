@@ -1,4 +1,6 @@
-<?php $user = current_user(); ?>
+<?php $user = current_user(); 
+
+?>
 <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -39,19 +41,19 @@
              <li>
                  <a href="edit_account.php" title="edit account">
                      <i class="glyphicon glyphicon-cog"></i>
-                     Settings
+                     Paramètre
                  </a>
              </li>
              <li class="last">
                  <a href="logout.php">
                      <i class="glyphicon glyphicon-off"></i>
-                     Logout
+                     Déconnexion
                  </a>
              </li>
            </ul>
           </li>
         </ul>
-      </div>
+      </div> 
      </div>
     </header>
     <div class="sidebar">
@@ -60,12 +62,10 @@
       <?php include_once('admin_menu.php');?>
 
       <?php elseif($user['user_level'] === '2'): ?>
-        <!-- Special user -->
-      <?php include_once('special_menu.php');?>
-
-      <?php elseif($user['user_level'] === '3'): ?>
         <!-- User menu -->
       <?php include_once('user_menu.php');?>
+
+      
 
       <?php endif;?>
 

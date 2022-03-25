@@ -49,7 +49,7 @@
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Ajouter un creancier</span>
+          <span>Ajouter une créance</span>
        </strong>
       </div>
       <div class="panel-body">
@@ -79,7 +79,7 @@
             </div>
             
             <div class="form-group clearfix">
-              <button type="submit" name="add_creancier" class="btn btn-primary">Ajouter un creancier</button>
+              <button type="submit" name="add_creancier" class="btn btn-primary">Ajouter</button>
             </div>
         </form>
         </div>

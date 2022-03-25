@@ -6,10 +6,10 @@
 <?php
   $delete_id = delete_by_id('creancier',(int)$_GET['id']);
   if($delete_id){
-      $session->msg("s","creance supprimé.");
+      $session->msg("s","créance supprimé.");
       redirect('creancier.php');
   } else {
-      $session->msg("d","creance non supprimé.");
+      $session->msg("d","créance non supprimé.");
       redirect('creancier.php');
   }
 ?>

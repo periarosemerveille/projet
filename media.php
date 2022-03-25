@@ -1,5 +1,5 @@
 <?php
-  $page_title = 'All Image';
+  $page_title = 'Toutes les Images';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
   page_require_level(2);
@@ -10,7 +10,7 @@
   $photo = new Media();
   $photo->upload($_FILES['file_upload']);
     if($photo->process_media()){
-        $session->msg('s','photo has been uploaded.');
+        $session->msg('s','photo téléchargé.');
         redirect('media.php');
     } else{
       $session->msg('d',join($photo->errors));
@@ -30,7 +30,7 @@
         <div class="panel panel-default">
           <div class="panel-heading clearfix">
             <span class="glyphicon glyphicon-camera"></span>
-            <span>All Photos</span>
+            <span>Toutes les Photos</span>
             <div class="pull-right">
               <form class="form-inline" action="media.php" method="POST" enctype="multipart/form-data">
               <div class="form-group">
@@ -39,7 +39,7 @@
                     <input type="file" name="file_upload" multiple="multiple" class="btn btn-primary btn-file"/>
                  </span>
 
-                 <button type="submit" name="submit" class="btn btn-default">Upload</button>
+                 <button type="submit" name="submit" class="btn btn-default">Télécharger</button>
                </div>
               </div>
              </form>

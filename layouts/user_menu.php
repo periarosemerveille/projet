@@ -2,28 +2,38 @@
   <li>
     <a href="home.php">
       <i class="glyphicon glyphicon-home"></i>
-      <span>Dashboard</span>
+      <span>Accueil</span>
     </a>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
-      <i class="glyphicon glyphicon-th-list"></i>
-       <span>Sales</span>
-      </a>
-      <ul class="nav submenu">
-         <li><a href="sales.php">Manage Sales</a> </li>
-         <li><a href="add_sale.php">Add Sale</a> </li>
-     </ul>
+    <a href="clients.php">
+      <i class="glyphicon glyphicon-user"></i>
+      <span>Clients</span>
+    </a>
   </li>
   <li>
-    <a href="#" class="submenu-toggle">
-      <i class="glyphicon glyphicon-signal"></i>
-       <span>Sales Report</span>
-      </a>
-      <ul class="nav submenu">
-        <li><a href="sales_report.php">Sales by dates </a></li>
-        <li><a href="monthly_sales.php">Monthly sales</a></li>
-        <li><a href="daily_sales.php">Daily sales</a> </li>
-      </ul>
+    <a href="commande.php">
+      <i class="glyphicon glyphicon-shopping-cart"></i>
+      <span>Commandes</span>
+    </a>
+  </li>
+  <li>
+    <a href="projets.php">
+      <i class="glyphicon glyphicon-list-alt"></i>
+      <span>Projets</span>
+    </a>
+  </li>
+ 
+ <li>
+    <a href="historiques.php">
+      <i class="glyphicon glyphicon-indent-left"></i>
+      <span>Historiques</span>
+    </a>
+  </li>
+  <li>
+    <a href="media.php">
+      <i class="glyphicon glyphicon-picture"></i>
+      <span>Médias</span>
+    </a>
   </li>
 </ul>
