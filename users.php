@@ -4,7 +4,7 @@
 ?>
 <?php
 // Checkin What level user has permission to view this page
- page_require_level(1);
+ page_require_level(1); 
 //pull out all user form database
  $all_users = find_all_user();
 ?>
@@ -20,9 +20,9 @@
       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Employés</span>
+          <span>Utilisateurs</span>
        </strong>
-         <a href="add_user.php" class="btn btn-info pull-right">Ajouter un employé</a>
+         <a href="add_user.php" class="btn btn-info pull-right">Ajouter un utilisateur</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
@@ -36,7 +36,6 @@
             <th>Adresse</th>
             <th>Telephone</th>
             <th>Cni</th>
-            <th>Cnps</th>
             <th style="width: 20%;">Dernière connexion</th>
             <th class="text-center" style="width: 100px;">Actions</th>
           </tr>
@@ -52,7 +51,6 @@
            <td><?php echo remove_junk(ucwords($a_user['adresse']))?></td>
            <td><?php echo remove_junk(ucwords($a_user['telephone']))?></td>
            <td><?php echo remove_junk(ucwords($a_user['cni']))?></td>
-           <td><?php echo remove_junk(ucwords($a_user['cnps']))?></td>
            <td><?php echo read_date($a_user['last_login'])?></td>
            <td class="text-center">
              <div class="btn-group">

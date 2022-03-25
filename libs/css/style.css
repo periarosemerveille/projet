@@ -300,9 +300,9 @@ table tfoot tr td:first-child{
   border-radius: 0;
 }
 input[type=file]{
-  text-indent: -99999px;
+  text-indent: 0px;
 }td img.img-thumbnail{ 
-  width: 125px;
+  width: 100px;
   height: 125px;
   vertical-align: top;
 }.img-avatar{
@@ -320,4 +320,16 @@ input[type=file]{
 }img.img-size-2{
   width: 125px;
   height: 125px;
+}
+
+.bienvenu{
+  color: #FF7857;
+  text-align: center;
+  font-size: 80px;
+  padding-top: 80px;
+}
+
+.navigue{
+  text-align: center;
+  font-size: 25px;
 }

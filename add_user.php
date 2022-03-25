@@ -8,7 +8,7 @@
 <?php
   if(isset($_POST['add_user'])){
 
-   $req_fields = array('full-name','username','password','level', 'email', 'adresse', 'telephone', 'cni', 'cnps' );
+   $req_fields = array('full-name','username','password','level', 'email', 'adresse', 'telephone', 'cni' );
    validate_fields($req_fields);
 
    if(empty($errors)){
@@ -20,26 +20,24 @@
        $adresse   = remove_junk($db->escape($_POST['adresse']));
        $telephone   = remove_junk($db->escape($_POST['telephone']));
        $cni   = remove_junk($db->escape($_POST['cni']));
-       $cnps   = remove_junk($db->escape($_POST['cnps']));
-
        $password = sha1($password);
         $query = "INSERT INTO users (";
-        $query .="name,username,password,user_level,status, email, adresse, telephone, cni, cnps";
+        $query .="name,username,password,user_level,status, email, adresse, telephone, cni";
         $query .=") VALUES (";
-        $query .=" '{$name}', '{$username}', '{$password}', '{$user_level}', '1', '{$email}', '{$adresse}', '{$telephone}', '{$cni}', '{$cnps}' ";
+        $query .=" '{$name}', '{$username}', '{$password}', '{$user_level}', '1', '{$email}', '{$adresse}', '{$telephone}', '{$cni}' ";
         $query .=")";
         if($db->query($query)){
           //sucess
           $session->msg('s',"Employé créé! ");
-          redirect('add_user.php', false);
+          redirect('users.php', false);
         } else {
           //failed
           $session->msg('d',' Employé non créé!');
-          redirect('add_user.php', false);
+          redirect('users.php', false);
         }
    } else {
      $session->msg("d", $errors);
-      redirect('add_user.php',false);
+      redirect('users.php',false);
    }
  }
 ?>
@@ -87,10 +85,6 @@
             <div class="form-group">
                 <label for="mdp">Mot_de_passe</label>
                 <input type="password" class="form-control" name ="password"  placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="cnps">Cnps</label>
-                <input type="text" class="form-control" name="cnps" placeholder="">
             </div>
             <div class="form-group">
               <label for="level">Statut</label>

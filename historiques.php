@@ -4,7 +4,7 @@
 ?>
 <?php
 // Checkin What level user has permission to view this page
- page_require_level(1);
+ page_require_level(2);
 //pull out all user form database
  $all_historiques = find_all_historiques();
 ?>

@@ -142,7 +142,7 @@ function tableExists($table){
   function find_all_user(){
       global $db;
       $results = array();
-      $sql = "SELECT u.id,u.name,u.username,u.password,u.user_level, u.email, u.adresse, u.telephone, u.cni, u.cnps, u.status,u.last_login,";
+      $sql = "SELECT u.id,u.name,u.username,u.password,u.user_level, u.email, u.adresse, u.telephone, u.cni, u.status,u.last_login,";
       $sql .="g.group_name ";
       $sql .="FROM users u ";
       $sql .="LEFT JOIN user_groups g ";
@@ -247,18 +247,9 @@ function find_all_budget(){
      $login_level = find_by_groupLevel($current_user['user_level']);
      //if user not login
      if (!$session->isUserLoggedIn(true)):
-            $session->msg('d','Please login...');
+            $session->msg('d','Veuillez vous connecter...');
             redirect('index.php', false);
-      //if Group status Deactive
-     elseif($login_level['group_status'] === '0'):
-           $session->msg('d','This level user has been band!');
-           redirect('home.php',false);
-      //cheackin log in User level and Require level is Less than or equal to
-     elseif($current_user['user_level'] <= (int)$require_level):
-              return true;
-      else:
-            $session->msg("d", "Sorry! you dont have permission to view the page.");
-            redirect('home.php', false);
+     
         endif;
 
      }

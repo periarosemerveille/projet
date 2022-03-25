@@ -16,7 +16,7 @@
 <?php
 //Update User basic info
   if(isset($_POST['update'])) {
-    $req_fields = array('name','username','level', 'email', 'adresse', 'telephone', 'cni', 'cnps');
+    $req_fields = array('name','username','level', 'email', 'adresse', 'telephone', 'cni');
     validate_fields($req_fields);
     if(empty($errors)){
              $id = (int)$e_user['id'];
@@ -27,20 +27,19 @@
           $adresse = remove_junk($db->escape($_POST['adresse']));
           $telephone = remove_junk($db->escape($_POST['telephone']));
           $cni = remove_junk($db->escape($_POST['cni']));
-          $cnps = remove_junk($db->escape($_POST['cnps']));
 
-            $sql = "UPDATE users SET name ='{$name}', username ='{$username}',user_level='{$level}', email='{$email}', adresse='{$adresse}', telephone='{$telephone}', cni='{$cni}', cnps='{$cnps}' WHERE id='{$db->escape($id)}'";
+            $sql = "UPDATE users SET name ='{$name}', username ='{$username}',user_level='{$level}', email='{$email}', adresse='{$adresse}', telephone='{$telephone}', cni='{$cni}' WHERE id='{$db->escape($id)}'";
          $result = $db->query($sql);
           if($result && $db->affected_rows() === 1){
             $session->msg('s',"employé modifié ");
-            redirect('edit_user.php?id='.(int)$e_user['id'], false);
+            redirect('users.php?id='.(int)$e_user['id'], false);
           } else {
             $session->msg('d',' employé non modifié');
-            redirect('edit_user.php?id='.(int)$e_user['id'], false);
+            redirect('users.php?id='.(int)$e_user['id'], false);
           }
     } else {
       $session->msg("d", $errors);
-      redirect('edit_user.php?id='.(int)$e_user['id'],false);
+      redirect('users.php?id='.(int)$e_user['id'],false);
     }
   }
 ?>
@@ -64,7 +63,7 @@ if(isset($_POST['update-pass'])) {
         }
   } else {
     $session->msg("d", $errors);
-    redirect('edit_user.php?id='.(int)$e_user['id'],false);
+    redirect('users.php?id='.(int)$e_user['id'],false);
   }
 }
 
@@ -113,10 +112,6 @@ if(isset($_POST['update-pass'])) {
             <div class="form-group">
                   <label for="cni" class="control-label">cni</label>
                   <input type="text" class="form-control" name="cni" value="<?php echo remove_junk(ucwords($e_user['cni'])); ?>">
-            </div>
-            <div class="form-group">
-                  <label for="cnps" class="control-label">cnps</label>
-                  <input type="text" class="form-control" name="cnps" value="<?php echo remove_junk(ucwords($e_user['cnps'])); ?>">
             </div>
             
             <div class="form-group clearfix">

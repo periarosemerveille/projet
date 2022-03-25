@@ -15,14 +15,14 @@ class  Media {
 
   public $errors = array();
   public $upload_errors = array(
-    0 => 'There is no error, the file uploaded with success',
-    1 => 'The uploaded file exceeds the upload_max_filesize directive in php.ini',
-    2 => 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form',
-    3 => 'The uploaded file was only partially uploaded',
-    4 => 'No file was uploaded',
-    6 => 'Missing a temporary folder',
-    7 => 'Failed to write file to disk.',
-    8 => 'A PHP extension stopped the file upload.'
+    0 => "il n'y a pas d''erreur, le fichier a été téléchargé avec succès",
+    1 => 'Le fichier téléchargé dépasse la directive upload_max_filesize dans php.ini',
+    2 => 'Le fichier téléchargé dépasse la directive MAX_FILE_SIZE spécifiée dans le formulaire HTML',
+    3 => "Le fichier téléchargé n'a été que partiellement téléchargé",
+    4 => "Aucun fichier n'a été téléchargé",
+    6 => "Absence d'un dossier temporaire",
+    7 => "Impossible d'écrire le fichier sur le disque.",
+    8 => 'Une extension PHP a arrêté le téléchargement du fichier.'
   );
   public$upload_extensions = array(
    'gif',
@@ -40,13 +40,13 @@ class  Media {
   public function upload($file)
   {
     if(!$file || empty($file) || !is_array($file)):
-      $this->errors[] = "No file was uploaded.";
+      $this->errors[] = "Aucun fichier n'a été téléchargé.";
       return false;
     elseif($file['error'] != 0):
       $this->errors[] = $this->upload_errors[$file['error']];
       return false;
     elseif(!$this->file_ext($file['name'])):
-      $this->errors[] = 'File not right format ';
+      $this->errors[] = "Le fichier n'est pas au bon format ";
       return false;
     else:
       $this->imageInfo = getimagesize($file['tmp_name']);
@@ -63,13 +63,13 @@ class  Media {
     if(!empty($this->errors)):
       return false;
     elseif(empty($this->fileName) || empty($this->fileTempPath)):
-      $this->errors[] = "The file location was not available.";
+      $this->errors[] = "L'emplacement du fichier n'était pas disponible.";
       return false;
     elseif(!is_writable($this->productPath)):
-      $this->errors[] = $this->productPath." Must be writable!!!.";
+      $this->errors[] = $this->productPath." Doit être inscriptible!!!.";
       return false;
     elseif(file_exists($this->productPath."/".$this->fileName)):
-      $this->errors[] = "The file {$this->fileName} already exists.";
+      $this->errors[] = "Le fichier {$this->fileName} existe déjà.";
       return false;
     else:
      return true;
@@ -83,17 +83,17 @@ class  Media {
         return false;
       }
     if(empty($this->fileName) || empty($this->fileTempPath)){
-        $this->errors[] = "The file location was not available.";
+        $this->errors[] = "l'emplacement du fichier n'est pas disponible.";
         return false;
       }
 
     if(!is_writable($this->productPath)){
-        $this->errors[] = $this->productPath." Must be writable!!!.";
+        $this->errors[] = $this->productPath." Doit être inscriptible !!!.";
         return false;
       }
 
     if(file_exists($this->productPath."/".$this->fileName)){
-      $this->errors[] = "The file {$this->fileName} already exists.";
+      $this->errors[] = "le fichier {$this->fileName} existe déjà.";
       return false;
     }
 
@@ -107,7 +107,7 @@ class  Media {
 
     } else {
 
-      $this->errors[] = "The file upload failed, possibly due to incorrect permissions on the upload folder.";
+      $this->errors[] = "Le téléchargement du fichier a échoué, probablement en raison d'autorisations incorrectes sur le dossier de téléchargement.";
       return false;
     }
 
@@ -121,15 +121,15 @@ class  Media {
         return false;
       }
     if(empty($this->fileName) || empty($this->fileTempPath)){
-        $this->errors[] = "The file location was not available.";
+        $this->errors[] = "l'emplacement du fichier n'est pas disponible.";
         return false;
       }
     if(!is_writable($this->userPath)){
-        $this->errors[] = $this->userPath." Must be writable!!!.";
+        $this->errors[] = $this->userPath." Doit être inscriptible !!!.";
         return false;
       }
     if(!$id){
-      $this->errors[] = " Missing user id.";
+      $this->errors[] = " ID utilisateur manquant.";
       return false;
     }
     $ext = explode(".",$this->fileName);
@@ -146,7 +146,7 @@ class  Media {
          }
 
        } else {
-         $this->errors[] = "The file upload failed, possibly due to incorrect permissions on the upload folder.";
+         $this->errors[] = "Le téléchargement du fichier a échoué, probablement en raison d'autorisations incorrectes sur le dossier de téléchargement.";
          return false;
        }
     }
@@ -198,18 +198,18 @@ class  Media {
    public function media_destroy($id,$file_name){
      $this->fileName = $file_name;
      if(empty($this->fileName)){
-         $this->errors[] = "The Photo file Name missing.";
+         $this->errors[] = "Le nom du fichier photo est manquant.";
          return false;
        }
      if(!$id){
-       $this->errors[] = "Missing Photo id.";
+       $this->errors[] = "Photo d'identité manquante.";
        return false;
      }
      if(delete_by_id('media',$id)){
          unlink($this->productPath.'/'.$this->fileName);
          return true;
      } else {
-       $this->error[] = "Photo deletion failed Or Missing Prm.";
+       $this->error[] = "Échec de la suppression de la photo Ou Prm manquant.";
        return false;
      }
 

@@ -2,7 +2,7 @@
   $page_title = 'My profile';
   require_once('includes/load.php');
   // Checkin What level user has permission to view this page
-   page_require_level(3);
+   page_require_level(1);
 ?>
   <?php
   $user_id = (int)$_GET['id'];
@@ -22,7 +22,7 @@
          </div>
         <?php if( $user_p['id'] === $user['id']):?>
          <ul class="nav nav-pills nav-stacked">
-          <li><a href="edit_account.php"> <i class="glyphicon glyphicon-edit"></i> Edit profile</a></li>
+          <li><a href="edit_account.php"> <i class="glyphicon glyphicon-edit"></i> Modifier profile</a></li>
          </ul>
        <?php endif;?>
        </div>

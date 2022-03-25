@@ -38,27 +38,35 @@
 <li>
 <a href="creancier.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-briefcase"></i>
-      <span>Creanciers</span>
+      <span>Créances</span>
     </a>
 </li>
 <!--employes-->
 <li>
 <a href="users.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-user"></i>
-      <span>Employés</span>
+      <span>Utilisateurs</span>
     </a>
 </li>
+<!--historiques-->
+<li>
+    <a href="historiques.php" >
+      <i class="glyphicon glyphicon-indent-left"></i>
+      <span>Historiques</span>
+    </a>
+  </li>
 <!--medias-->
 <li>
     <a href="media.php" >
       <i class="glyphicon glyphicon-picture"></i>
-      <span>Medias</span>
+      <span>Médias</span>
     </a>
   </li>
+  
   <li>
-    <a href="historiques.php" >
-      <i class="glyphicon glyphicon-indent-left"></i>
-      <span>Historiques</span>
+    <a href="group.php" >
+      <i class="glyphicon glyphicon-plus-sign"></i>
+      <span>Groupe</span>
     </a>
   </li>
 <!--<li>
